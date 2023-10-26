@@ -1,4 +1,4 @@
-#Exercice 1 :
+#Grille de Sudoku
 S=[[0,1,0,0,7,8,0,0,0],
 [0,8,0,0,4,0,9,0,0],
 [0,0,5,6,0,0,0,1,0],
@@ -10,7 +10,7 @@ S=[[0,1,0,0,7,8,0,0,0],
 [0,0,0,0,0,4,0,0,0]
 ]
 
-#Exerice 2 :
+
 def enlever0(liste):
     while 0 in liste:
         liste.remove(0)
@@ -18,11 +18,8 @@ def enlever0(liste):
 
 def ligne(S,i):
     liste = S[i]
-##    while 0 in liste:
-##        liste.remove(0)
     return enlever0(liste)
 
-#Exercice 3 :
 def colonne(S,j):
     colonne =[]
     for i in range(len(S)):
@@ -110,7 +107,6 @@ def bloc(S,i,j):
         return enlever0(bloc9)
 
 
-#Exercice 5
 def possibles(S,i,j):
     bloc_par=bloc(S,i,j)
     ligne_par=ligne(S,i)
@@ -126,8 +122,6 @@ def possibles(S,i,j):
             nbr_poss.append(i)
     return nbr_poss
 
-#Probleme lorsqu'on relance pas le programme ???
-#Exercice 6
 
 def suivante(i, j):
     if j == 8:
@@ -138,28 +132,21 @@ def suivante(i, j):
         colonne = j + 1
     return (ligne, colonne)
 
-#Exercice 7
-##def solve(S,i,j):
-##    if i==9:
-##        return suivante(8,8)
-##    elif S[i][j]>0:
-##        possibles
-##
-##
+
 def solve(S,i,j) :
     if i==9 :
-        return False
+        return ... #False ???
 
     elif S[i][j]>0:
-        a,b = suivante(i,j)
-        return solve(S,a,b)
+        ...
+        return ... #solve(S,a,b) ???
 
     for k in possibles(S,i,j):
         S[i][j] = k
-        a,b=suivante(i,j)
-        S=k
+        ... #a,b=suivante(i,j) ???
+             #S=k ???
         if solve(S,a,b) :
-            return k
+            return .... #k ???
 
     S[i][j] = 0
     return False
