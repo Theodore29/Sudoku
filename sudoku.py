@@ -134,22 +134,23 @@ def suivante(i, j):
 
 
 def solve(S,i,j) :
-    if i==9 :
-        return ... #False ???
+   if i==9 :
+        return True
 
     elif S[i][j]>0:
-        ...
-        return ... #solve(S,a,b) ???
+        a,b=suivante(i,j)
+        return solve(S,a,b)
 
     for k in possibles(S,i,j):
         S[i][j] = k
-        ... #a,b=suivante(i,j) ???
-             #S=k ???
+        a,b=suivante(i,j)
+        solve(S,a,b)
         if solve(S,a,b) :
-            return .... #k ???
+            return True, S
 
     S[i][j] = 0
     return False
+
 
 solve(S,1,1)
 
